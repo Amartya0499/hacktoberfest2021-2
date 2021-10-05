@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+class Complex
+{
+    int real,imaginary;
+public:
+
+    Complex(int r,int i)
+    {
+        real=r;
+        imaginary=i;
+    }
+    void display()
+    {
+        cout<<real<<'+'<<imaginary<<"i"<<endl;
+    }
+    friend void operator -(Complex &c);
+};
+void operator -(Complex &c)
+{
+    c.real=-c.real;
+    c.imaginary=-c.imaginary;
+}
+int main()
+{
+    Complex a(30,40);
+    cout<<"Before negation: "<<endl;
+    a.display();
+    -a;
+    cout<<"After negation: "<<endl;
+    a.display();
+}
