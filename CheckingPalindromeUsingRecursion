@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int s=0,d;
+int isPalindrome(int a){
+if(a==0)
+return a;
+else{
+d=a%10;
+s=10*s+d;
+isPalindrome(a/10);
+}
+return s;
+}
+int main(){
+int n;
+cout<<"Enter the number to be checked: "<<endl;
+cin>>n;
+if(isPalindrome(n)==n)
+cout<<"The number is palindrome."<<endl;
+else
+cout<<"The number is not palindrome."<<endl;
+}
